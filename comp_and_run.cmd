@@ -1,0 +1,1 @@
+.\compile.cmd && .\run.cmd

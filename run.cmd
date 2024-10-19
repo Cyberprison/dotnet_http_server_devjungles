@@ -1,0 +1,1 @@
+cd .\dotnet_http_server && dotnet run

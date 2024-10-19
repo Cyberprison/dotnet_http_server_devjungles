@@ -11,7 +11,7 @@ namespace dotnet_http_server
     {
         public static void Main(string[]args)
         {
-            ServerHost host = new ServerHost(new StaticFileHandler());
+            ServerHost host = new ServerHost(new StaticFileHandler(Path.Combine(Environment.CurrentDirectory ,"www")));
             host.Start();
         }
     }
