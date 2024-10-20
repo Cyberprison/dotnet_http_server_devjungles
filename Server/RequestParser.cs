@@ -2,7 +2,7 @@ using System.Net.Http;
 
 namespace Server {
 
-    internal static class RequestParse {
+    internal static class RequestParser {
         //парсит запрос, куки, адрес и др
         public static Request Parse (string header) {
             var split = header.Split(" ");

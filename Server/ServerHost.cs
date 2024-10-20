@@ -18,10 +18,17 @@ namespace Server
 
             while(true)
             {
-                var client = listner.AcceptTcpClient(); 
+                using(var client = listner.AcceptTcpClient())
                 using(var stream = client.GetStream())
+                using(var reader = new StreamReader(stream))
                 {    
-                    _handler.Handle(stream);
+                    //костыль, считывает запрос иконки и игнорирует её
+                    var firstLine = reader.ReadLine();
+                    for (string line = null; line != string.Empty; line = reader.ReadLine())
+                        ;
+
+                    var request = RequestParser.Parse(firstLine);
+                    _handler.Handle(stream,request);
                 }
             }
         }

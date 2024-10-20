@@ -5,5 +5,5 @@ namespace Server {
     //путь после домена
     //хттп метод
     //версия протокола
-    internal record Request(string Path, HttpMethod Method);
+    public record Request(string Path, HttpMethod Method);
 }

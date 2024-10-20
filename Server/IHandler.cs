@@ -2,6 +2,6 @@ using System.IO;
 
 namespace Server {
     public interface IHandler {
-        void Handle(Stream stream);
+        void Handle(Stream stream, Request request);
     }
 }
